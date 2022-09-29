@@ -1,7 +1,10 @@
 ﻿int count = 0;
-double distance = 10000; 
+double time_ = 0;;
+Console.Write("Введите дистанцию ");
+string distance_string = Console.ReadLine(); 
+double distance = Convert.ToDouble(distance_string);
 int firstFrendSpeed = 1, secondFrendSpeed = 2, dogSpeed = 5, friend = 2;
-double time_ = 0;
+
 
 while (distance > 10)
 {
