@@ -1,7 +1,7 @@
 ﻿int Max(int[] arr)
 {
     int result = arr[0];
-    foreach (var num in arr)
+    foreach (int num in arr)
     {
         if (num > result) result = num;
     }

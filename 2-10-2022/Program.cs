@@ -27,7 +27,7 @@ Console.WriteLine("Thirty Two: {0}",0b0010_0000); */
 
 
 
-Console.WriteLine("=> Jagged multidimensional array.");
+/* Console.WriteLine("=> Jagged multidimensional array.");
 // Зубчатый многомерный массив (т.е. массив массивов).
 // Здесь мы имеем массив из 5 разных массивов,
 int[][] myJagArray = new int [5][] ;
@@ -42,11 +42,58 @@ for (int i = 0; i < 5; i++)
     Console.WriteLine();
 }
 Console.WriteLine();
+ */
 
+/* static void DisplayFancyMessage(ConsoleColor textColor,
+ConsoleColor backgroundColor, string message)
+{
+// Сохранить старые цвета для их восстановления после вывода сообщения.
+ConsoleColor oldTextColor = Console.ForegroundColor;
+ConsoleColor oldbackgroundColor = Console.BackgroundColor;
+// Установить новые цвета и вывести сообщение.
+Console.ForegroundColor = textColor;
+Console.BackgroundColor = backgroundColor;
+Console.WriteLine(message);
+// Восстановить предыдущие цвета.
+Console.ForegroundColor = oldTextColor;
+Console.BackgroundColor = oldbackgroundColor;
+}
 
+Console.WriteLine ("***** Fun with Methods *****");
+DisplayFancyMessage(message: "Wow! Very Fancy indeed!",
+textColor: ConsoleColor.DarkRed,
+backgroundColor: ConsoleColor.White);
+DisplayFancyMessage(backgroundColor: ConsoleColor.Green,
+message: "Testing...",
+textColor: ConsoleColor.DarkBlue);
+Console.ReadLine(); */
 
+//Кортежи
+Console.WriteLine("=> Inferred Tuple Names1");
+var foo = new {Propl = "first", Prop2 = "second"};
+var bar = (foo.Propl, foo.Prop2);
+Console.WriteLine($"{bar.Propl};{bar.Prop2}");
 
+static (string first, string middle, string last) SplitNames(string fullName)
+{
+// Действия, необходимые для расщепления полного имени,
+string[] arr =fullName.Split(" ");
+/* do while (arr.Length == 3)
+{
+    Console.Write("Введены некоректные данные. Введите ФИО полностью: ");
+    string? fullname= Console.ReadLine();  
+   // string[] arr =fullName.Split(" ");
+} */
 
+    string first = arr[0];
+    string middle = arr[1];
+    string last =arr[2];
+return (first, middle, last);
 
+}
 
-
+Console.Write("Введите имя: ");
+string? fname= Console.ReadLine();
+var (first, _, last) = SplitNames(fname);
+Console.WriteLine(first);
+Console.Write(last);
